@@ -1,10 +1,10 @@
 package Auxiliar;
 
+import fileManager.FileManager;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import main.Arquivo;
 
 public class Parametros {
     
@@ -36,8 +36,8 @@ public class Parametros {
     
     public Parametros(File arquivoParametros) {
         this.arquivoParametros = arquivoParametros;
-        String textoArquivoParametros = Arquivo.ler(this.arquivoParametros.getAbsolutePath());
-        Arquivo.salvar(this.arquivoParametros.getAbsolutePath(), "usado");
+        String textoArquivoParametros = FileManager.getText(this.arquivoParametros.getAbsolutePath());
+        FileManager.save(this.arquivoParametros.getAbsolutePath(), "usado");
         
         definir(textoArquivoParametros);
     }
